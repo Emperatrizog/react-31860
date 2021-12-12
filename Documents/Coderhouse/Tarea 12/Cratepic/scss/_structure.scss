@@ -1,0 +1,279 @@
+nav .m-c{
+	margin-left: 15%;
+    margin-right: 15%;
+}
+
+nav{
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+.img-i{
+	float: right;
+}
+
+.content-h {
+    padding-top: 5%;
+    text-align: center;
+    padding-bottom: 7%;
+}
+
+.content-h h1 {
+    width: 610px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-bottom: 2%;
+}
+
+.container-fluid{
+    background: linear-gradient(180deg, #E2CDEF 0%, #F5F5F5 100%);
+}
+/*BEM#1*/
+.project{
+	background-color: #F5F7FA;
+	border-radius: 10px;
+	padding-left: 20%;
+	padding-right: 20%;
+	padding-top: 10%;
+	padding-bottom: 10%;
+}
+
+.project__c{
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-flex;
+}
+
+.modal-footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center !important;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: center !important;
+    padding: 1rem;
+    border-top: 1px solid #e9ecef;
+}
+
+/*BEM#2*/
+
+.modalSignin{
+position: relative;
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+-webkit-box-orient: vertical;
+-webkit-box-direction: normal;
+-ms-flex-direction: column;
+flex-direction: column;
+width: 100%;
+pointer-events: auto;
+background-color: #fff;
+background-clip: padding-box;
+border: 1px solid rgba(0,0,0,.2);
+border-radius: 0.3rem;
+outline: 0;
+}
+
+.modalSignin__content {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 0.3rem;
+    outline: 0;
+}
+
+.modalSignin__body{
+    text-align: center;
+}
+
+.modalSignin--btn{
+    width: 90%;
+}
+
+.modalSignin--form-control{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.d-flex{
+    display: -webkit-box!important;
+    display: -ms-flexbox!important;
+    display: flex!important;
+}
+ 
+.d-flex__m-2{
+    margin: 0.5rem!important;
+}
+
+.gallery{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gallery__block{
+    padding: 1rem!important;
+}
+
+
+.input-group{
+    width: 60% !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.s-home {
+    width: 605px;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 100px;
+    font-size: 16px;
+    padding-left: 20px;
+}
+
+#s-home {
+    height: 46px;
+    border: none;
+    width: 454px;
+    border-radius: 100px;
+    font-size: 16px;
+}
+
+.s-home button {
+    width: 130px;
+    height: 40px;
+    color: white;
+    border-radius: 100px;
+    border: none;
+    background-color: #343A40;
+    cursor: pointer;
+}
+
+
+/*Transitions & Animations*/
+.gallery__block img{
+    transition: .2s ease-in-out 0s;
+
+}
+
+.gallery__block img:hover{
+        cursor: pointer;
+        transform: scale(1.1);
+}
+
+
+
+.btn{
+	padding-top: 14px !important;
+    padding-bottom: 14px !important;
+    font-family: 'Mulish', sans-serif !important;
+    font-weight: bold !important;
+    background-color:#343A40 !important;
+    font-size: 15px !important;
+    color: white !important;
+    border-radius: 100px !important;
+    border: none !important;
+    text-decoration: none !important;
+}
+
+
+.btn--signin{
+    height: 30px !important;
+    align-content: center !important;
+    display: grid !important;
+    margin-top: 6px;
+    margin-left: 10px;
+}
+
+.btn:hover{
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); 
+
+}
+
+.s-home button:hover{
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); 
+
+}
+
+/* Responsive Breakpoints*/
+
+@media (min-width: 992px) {
+
+    .recents h4{
+        margin-left: 9%;
+        margin-right: 9%;
+    }
+
+    .recents button{
+        margin-top: 5%;
+    }
+
+
+}
+
+@media (min-width: 768px) {
+
+.navbar{
+    justify-content: center !important;
+}
+
+
+
+.navbar-toggler{
+    margin-left: 30%;
+}
+
+.recents h4{
+        justify-items: center;
+        display: grid;
+
+}
+
+
+}
+
+
+@media (min-width: 576px) {
+
+.custom-s{
+    margin-bottom: 10%;
+}
+
+}
+
+
+@media (min-width: 320px) {
+
+    .project img{
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .subscribe{
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: c;
+    }
+    
+    }
