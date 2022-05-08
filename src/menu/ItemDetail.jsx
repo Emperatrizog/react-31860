@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ItemList } from "../data/ItemList";
-import GetItems from "../components/ItemDetailContainer";
+import GetItems from "../components/item/ItemDetailContainer";
 
 const ItemDetail = () => {
     const {cafeId} = useParams()

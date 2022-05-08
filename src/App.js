@@ -21,7 +21,7 @@ function App() {
       <Routes>
         <Route path='/' element={  <ItemListContainer greeting='Bienvenidx a la cafetería, conoce nuestros productos:'></ItemListContainer>}/>
         <Route path='/menu/nosotros' element={<Nosotros/>} />
-        <Route path='/:cafeId' element={<ItemDetail/>}/>
+        <Route path='/item/:cafeId' element={<ItemDetail/>}/>
 
       </Routes>
 
