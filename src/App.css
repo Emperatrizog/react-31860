@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+
+
+/*Pequeños cambios de estilo */
+
+
+.grid-flow-col {
+  margin-top: 38px;
+}
+
+
+.shadow-md {
+  --tw-shadow: none;
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.top-title {
+  margin-top: 80px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.bg-house-green {
+  background-color: #1e3932;
+}

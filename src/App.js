@@ -1,14 +1,32 @@
-import logo from './logo.svg';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Router,
+  Link,
+} from "react-router-dom";
 import './App.css';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
+import Nosotros from "./menu/Nosotros";
+import ItemDetail from './menu/ItemDetail';
+
+
 
 function App() {
   return (
     <>
-    <NavBar></NavBar>
-    <div className="bg-amber-900 w-full h-screen"></div>
-    <ItemListContainer greeting='Bienvenidx a la cafetería, conoce nuestros productos:'></ItemListContainer>
+      <BrowserRouter>
+      <NavBar></NavBar>  
+      <Routes>
+        <Route path='/' element={  <ItemListContainer greeting='Bienvenidx a la cafetería, conoce nuestros productos:'></ItemListContainer>}/>
+        <Route path='/menu/nosotros' element={<Nosotros/>} />
+        <Route path='/:cafeId' element={<ItemDetail/>}/>
+
+      </Routes>
+
+
+      </BrowserRouter>
     </>
   );
 }
