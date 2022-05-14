@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCartContext,} from "../CartContext";
 import ItemCount from "./ItemCount";
@@ -9,7 +10,11 @@ export default function ItemDetail ({cafe}) {
     function handleOnAdd(count) {
         console.log(count);
         addToCart(cafe, count);
+        setTerminar(true)
+        console.log(count)
       }
+      
+      const [terminar,  setTerminar] = useState(false)
       
 
     return(
@@ -20,7 +25,13 @@ export default function ItemDetail ({cafe}) {
             </div><br />
             <strong>Categoría: {cafe.category}</strong><br />
             <strong>Más detalles: {cafe.descripcion}</strong><br /><br />
-            <ItemCount initial={1} stock={cafe.stock} onAdd={handleOnAdd}/>
+            {terminar ? 
+            
+            (<Link to="/cart" className="btn-coffee">Terminar Compra</Link>) 
+            
+            : 
+            (<ItemCount initial={1} stock={cafe.stock} onAdd={handleOnAdd}/>)}
+
             <br /><br />
             <Link to='/'><button className="btn-coffee">Regresar al home</button></Link> <br></br><br></br>
            
