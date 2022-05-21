@@ -18,17 +18,54 @@ const CartContextProvider = ({ children }) => {
         )
       );
     }
+    if (isInCart(item.id)){
+      const newCart = [...cartList];
+      const indexEncontrado = newCart.findIndex ((product) => product.id ===item.id)
+      newCart[indexEncontrado].amount += amount
+      setCartList(newCart);
+    }
+    else {
+      setCartList((previouscart) =>[...cartList, item, amount]);
+    }
+
     setCartList([...cartList, { ...item, amount }]);
+  }
+  const removeFromCart = (id) => {
+    const itemRemoved = cartList.filter((item) => item.id !== id);
+    setCartList(itemRemoved);
   }
 
   function isInCart(id) {
     return cartList.some((item) => item.id === id);
   }
 
+  const calcPriceCart = () =>{
+    let total = 0;
+    cartList.forEach((element)=>{
+      total = total + element.price * element.amount;
+    });
+    return total;
+  }
+
+  const totalAmount = () => {
+    let total = 0;
+    cartList.forEach((element)=>{
+      total = total + element.amount;
+    })
+    return total;
+  }
+
+
   return (
     <CartContext.Provider
       value={{
+        cartList,
         addToCart,
+        setCartList,
+        removeFromCart,
+        isInCart,
+        calcPriceCart,
+        totalAmount,
       }}
     >
       {children}

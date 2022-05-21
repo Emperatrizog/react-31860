@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useCartContext,} from "../CartContext";
+import { useCartContext} from "../CartContext";
 import ItemCount from "./ItemCount";
 
 
 export default function ItemDetail ({cafe}) {
     const {addToCart} = useCartContext();
-
+    
     function handleOnAdd(count) {
-        console.log(count);
         addToCart(cafe, count);
         setTerminar(true)
         console.log(count)
