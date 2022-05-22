@@ -12,10 +12,10 @@ import CartContextProvider  from "./components/CartContext";
 import Cart from "./components/pages/Cart";
 
 
-
-function App() {
+function  App() {
   return (
     <>
+
     <CartContextProvider>
       <BrowserRouter>
       <NavBar></NavBar>  

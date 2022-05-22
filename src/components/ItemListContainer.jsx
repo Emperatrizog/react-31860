@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { ItemList } from "../data/ItemList"
 import { Item } from "./Item";
 import Loading from "./loading";
 import { Link } from "react-router-dom";
+import { getAllItems as getCoffee} from "../data/index";
 
 
 const ItemListContainer = ({greeting}) => {
@@ -18,14 +18,7 @@ const ItemListContainer = ({greeting}) => {
         })
     }, [])
 
-const getCoffee = () => {
-
-    return new Promise ((resolve, reject) =>{
-        setTimeout(()=>{
-            resolve (ItemList)
-        }, 2000);
-    })
-}    
+  
     return (
         <>
         <div className="bg-amber-900 w-full h-screen">
