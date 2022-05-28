@@ -4,7 +4,7 @@ import { useCartContext} from "../CartContext";
 import ItemCount from "./ItemCount";
 
 
-export default function ItemDetail ({cafe}) {
+export default function ItemDetailContainer ({cafe}) {
     const {addToCart} = useCartContext();
     
     function handleOnAdd(count) {

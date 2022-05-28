@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { ItemList } from "../data/ItemList";
-import GetItems from "../components/item/ItemDetailContainer";
+import ItemDetailContainer from "../components/item/ItemDetailContainer";
+import { getCoffeeDetail } from "../data/index";
+
+
 
 const ItemDetail = () => {
     const {cafeId} = useParams()
@@ -10,26 +12,19 @@ const ItemDetail = () => {
     useEffect( () => {
       
         (async () => {
-            const IteList = await getCoffeeDetail()
+            const IteList = await getCoffeeDetail(cafeId)
             setCafe(IteList)
         }) ()
 
     }, [])
 
-    const getCoffeeDetail = () => {
-        return new Promise( (resolve) => {
-            setTimeout(() => {
-                resolve( ItemList.find( r => r.id ==cafeId) )
-            }, 2000);
-            
-        })
-    }
+
      
 
     return(
         <div className="top-title">
         <h1 >Detalles del Café - {cafeId}</h1>
-        {<GetItems cafe={cafe}/>}
+        {<ItemDetailContainer cafe={cafe}/>}
 
         </div>
    

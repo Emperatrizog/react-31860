@@ -17,10 +17,36 @@ const firestoreDB = getFirestore(app);
 
 export default firestoreDB;
 
+
+
+
 export async function getAllItems() {
 
     const menu = collection(firestoreDB, 'cafeteria');
     const cafeSnap = await getDocs(menu);
 
-    return cafeSnap.docs.map(doc => doc.data());
+    return cafeSnap.docs.map(doc =>{
+        return {
+            ...doc.data(),
+               id: doc.id
+        }
+    } );
 }
+
+
+
+
+
+export async function getCoffeeDetail(id) {
+
+    const menu = collection(firestoreDB, 'cafeteria');
+    const cafeRef = doc(menu, id);
+    const cafeSnap = await getDoc(cafeRef);
+
+    return {
+        ...cafeSnap.data(),
+        id: cafeSnap.id
+    }
+    
+}
+
