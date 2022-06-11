@@ -20,8 +20,8 @@ const ItemCount = ({ initial, stock, onAdd }) => {
         <button className="btn-coffee" onClick={handleSubstract}>-</button>
         <span>{count}</span>
         <button className="btn-coffee" onClick={handleAdd}>+</button>
-      </div> <br></br>
-      <button className="btn-coffee" onClick={() => onAdd(count)}>Agregar al carrito</button>
+      <button className=" ml-10 btn-coffee" onClick={() => onAdd(count)}>Agregar al carrito</button>
+      </div>
     </div>
   );
 };

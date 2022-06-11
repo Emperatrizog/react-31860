@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 
 const Cart = () => {
 
-    const {cartList} = useCartContext();
+    const {cartList,calcPriceCart} = useCartContext();
+    
 
     return ( 
         <div className="block-pages">
@@ -14,10 +15,15 @@ const Cart = () => {
             
             : 
             ( <CartView></CartView>)
+            
         }
 
 
         <div>  <br /><br />
+        <br></br>
+                        <hr></hr><br></br>
+                        <div>Total de la compra: ${calcPriceCart()} </div>
+                        <br></br>
         <Link to='/'><button className="btn-coffee">Seguir Comprando</button></Link> <br></br><br></br>
        </div>
        </div>

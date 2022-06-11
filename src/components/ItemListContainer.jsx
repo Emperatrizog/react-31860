@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 import { Item } from "./Item";
 import Loading from "./loading";
-import { Link } from "react-router-dom";
-import { getAllItems as getCoffee} from "../data/index";
-
+import { getAllItems as getCoffee} from "../data/Index";
 
 const ItemListContainer = ({greeting}) => {
     //Desafío 03 Catálogo con MAPS y Promises
@@ -21,31 +19,35 @@ const ItemListContainer = ({greeting}) => {
   
     return (
         <>
-        <div className="bg-amber-900 w-full h-screen">
+        <div className="bg-amber-900 w-full">
 
-            <div className='shadow-md w-full fixed top-12 left0'>
+            <div className="spacer-top shadow-md w-full top-1 left0">
                         <div className='flex w-full items-center text-center justify-between bg-orange-300 py4 md:px-10 px-7'>
                             <div className="w-full">
                                 <ul className="w-full flex p-3">
                                     <span>{greeting}</span>
-                                    <li className="flex">
-                                        <li><Link to='/menu/Nosotros' className="text-blue-500 hover:text-blue-800 pl-10">Nosotros</Link></li>
-                                        <li><Link to='/menu/Menu' className="text-blue-500 hover:text-blue-800 pl-10">Menu</Link></li>
-                                        <li><Link to='/menu/Suscripcion' className="text-blue-500 hover:text-blue-800 pl-10">Suscripción</Link></li>
-                                    </li>    
+
                                 </ul>
                             </div>
                         </div>
-                        
-                        <div className="grid grid-flow-col ">
-                            {loading ?
 
-                                <Loading></Loading>
-                            :
-                             coffee.map(r => (
-                             <Item key={r.id} data={r}></Item> 
-                             
-                             ))}
+                        <div className="ml-7 mt-10 "><h1 className="h1">Escoge tu Antojo</h1></div>
+                        
+                        <div className="">
+
+                            <div className="flex flex-wrap">
+
+                                {loading ?
+
+                                    <Loading></Loading>
+                                :
+                                
+                                coffee.map(r => (
+                                    
+                                <Item key={r.id} data={r}></Item> 
+                                
+                                ))}
+                            </div>
                         </div>
 
             </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetailContainer from "../components/item/ItemDetailContainer";
-import { getCoffeeDetail } from "../data/index";
+import { getCoffeeDetail } from "../data/Index";
 
 
 
@@ -23,7 +23,7 @@ const ItemDetail = () => {
 
     return(
         <div className="top-title">
-        <h1 >Detalles del Café - {cafeId}</h1>
+        <h1 >Detalles del Café </h1>
         {<ItemDetailContainer cafe={cafe}/>}
 
         </div>

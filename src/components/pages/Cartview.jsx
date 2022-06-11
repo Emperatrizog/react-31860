@@ -1,9 +1,28 @@
 import React, { useState } from "react";
 import {useCartContext} from "../CartContext";
+import {createBuyOrder} from "./../../data/Index"
+import { Link } from "react-router-dom";
+
 
 function CartView(){
-    const {cartList, calcPriceCart, removeFromCart} = useCartContext();
+    const {cartList, removeFromCart, clearCart} = useCartContext();
+    function handleBuy(){
+        const buyOrder = {
+            buyer: {
+                name: "Frank",
+                phone: "3118200393",
+                email: "frank@email.com",
+            },
+            items: [...cartList],
+            date: new Date(),
+            total: 0
+        }
+        createBuyOrder(buyOrder)
+        clearCart();
+    }
+
     return ( 
+        <>
             <div>
                 {cartList.map ((item) => (
                     <div>
@@ -16,14 +35,11 @@ function CartView(){
                             <button onClick={()=>removeFromCart(item.id)} className="btn-coffee"> Eliminar Producto</button><br/>          
                         </div>
                     </div>
-                    <br></br>
-                        <hr></hr><br></br>
-                        <div>Total de la compra: ${calcPriceCart()} </div>
-                        <br></br>
 
                     </div>))}
             </div>
-            
+            <div><button onClick={handleBuy} className="btn-coffee">Comprar</button></div>
+            </>
             );    
 }
 

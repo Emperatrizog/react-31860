@@ -1,6 +1,6 @@
 import { async } from "@firebase/util";
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, query, where, getDocs, getDoc, setDoc, doc, addDoc} from 'firebase/firestore/lite'
+import { getFirestore, collection, query, where, getDocs, getDoc, setDoc, doc, addDoc, Timestamp,} from 'firebase/firestore/lite'
 
 const firebaseConfig = {
   apiKey: "AIzaSyCUnBzcvhLcncCc_D3K1xpPFwr1XUxORe4",
@@ -50,3 +50,36 @@ export async function getCoffeeDetail(id) {
     
 }
 
+
+//Categorías
+
+export async function getCoffeeCategory(productCategorie) {
+
+    const menu = collection(firestoreDB, 'cafeteria');
+    const cafeRef = query(menu, where("category","==", productCategorie))
+    const cafeSnap = await getDocs(cafeRef);
+    
+    return cafeSnap.docs.map(doc =>{
+    return {
+        ...doc.data(),
+        id: doc.id
+    }
+    })
+    
+}
+
+//Buyer Order
+export async function createBuyOrder(orderData){
+    const buyTimestamp = Timestamp.now();
+
+    const orderWithDate = {
+        ...orderData,
+        date: buyTimestamp
+    };
+
+    const menu = collection(firestoreDB, "buyOrders");
+    const orderDoc = await addDoc(menu, orderWithDate);
+
+    console.log("ID de Compra:", orderDoc.id)
+    console.log("Orden de Compra:", orderData);
+}

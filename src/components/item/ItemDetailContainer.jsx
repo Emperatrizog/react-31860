@@ -17,23 +17,25 @@ export default function ItemDetailContainer ({cafe}) {
       
 
     return(
-        <div className="top-title ">
+        <div className="">
             <div className="bg-house-green">
-            <img className="" src={cafe.pictureUrl}/><br />
-            <strong className="title-product">Tipo de Café: {cafe.name}</strong><br /><br />
+                <img className="" src={cafe.pictureUrl}/><br />
+                <div><strong className="title-product">Producto: {cafe.name}</strong><br />
+                <strong>Categoría:</strong> <p className="t-content">{cafe.category}</p>
+                <strong>Más detalles:</strong> <p className="t-content">{cafe.descripcion}</p></div>
             </div><br />
-            <strong>Categoría: {cafe.category}</strong><br />
-            <strong>Más detalles: {cafe.descripcion}</strong><br /><br />
-            {terminar ? 
-            
-            (<Link to="/cart" className="btn-coffee">Terminar Compra</Link>) 
-            
-            : 
-            (<ItemCount initial={1} stock={cafe.stock} onAdd={handleOnAdd}/>)}
 
-            <br /><br />
-            <Link to='/'><button className="btn-coffee">Regresar al home</button></Link> <br></br><br></br>
-           
+            <div className="ml-10">
+                {terminar ? 
+                
+                (<Link to="/cart" className="btn-coffee">Terminar Compra</Link>) 
+                
+                : 
+                (<ItemCount initial={1} stock={cafe.stock} onAdd={handleOnAdd}/>)}
+
+                <br /><br />
+                <Link to='/'><button className="btn-coffee">Regresar al home</button></Link> <br></br><br></br>
+            </div>
 
         </div>
     );

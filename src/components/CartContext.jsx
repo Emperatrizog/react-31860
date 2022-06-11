@@ -35,6 +35,10 @@ const CartContextProvider = ({ children }) => {
     setCartList(itemRemoved);
   }
 
+  const clearCart = () => {
+    setCartList([]);
+  }
+
   function isInCart(id) {
     return cartList.some((item) => item.id === id);
   }
@@ -66,6 +70,7 @@ const CartContextProvider = ({ children }) => {
         isInCart,
         calcPriceCart,
         totalAmount,
+        clearCart,
       }}
     >
       {children}
